@@ -13,7 +13,7 @@ var seedDb   = require("./seeds")
 
 
 
-mongoose.connect("mongodb://localhost/todoList");
+mongoose.connect("mongodb+srv://jumpsy:kurokos28@cluster0-wmocy.mongodb.net/test?retryWrites=true");
 
 app.use(bodyParser.urlencoded({extended :true}));
 app.set("view engine", "ejs");
@@ -171,6 +171,6 @@ var isLoggedIn = function(req, res, next){
 }
 
 
-app.listen(8080, function(){
+app.listen(process.env.PORT, process.env.IP , function(){
 	console.log("Todolist app is running")
 })
