@@ -1,0 +1,25 @@
+<% include partials/header.ejs %>
+	<body>
+		<div id="container">
+			<h1 class="todolist">Todo List <i class="fas fa-plus"></i> </h1>
+			<form id="add-form" action="/todolist" method="POST">
+			<input type="text" name="todolist" placeholder="Add New Todo" maxlength = "35">
+			</form>
+			<ul>
+				<% todoList.forEach(function(todoList){ %>
+				<li>
+				<form id="delete-form" action="/todoList/<%= todoList._id %>?_method=DELETE" method="POST"> 
+					<button class="destroy-button">Delete</button>
+					<%= todoList.todoList %></li>
+				</form>
+				<% }) %>
+			</ul>
+
+		</div>
+
+
+	<script type="text/javascript" src="/javascript/main.js"></script>
+
+
+<% include partials/footer.ejs%>
+
