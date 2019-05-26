@@ -13,6 +13,7 @@ var seedDb   = require("./seeds")
 
 
 
+
 mongoose.connect("mongodb+srv://jumpsy:kurokos28@cluster0-wmocy.mongodb.net/test?retryWrites=true");
 
 app.use(bodyParser.urlencoded({extended :true}));
